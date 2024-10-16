@@ -1,4 +1,4 @@
-package com.josem.loginexample.login_example.services;
+package com.josem.loginexample.login_example.services.interfaces;
 
 import com.josem.loginexample.login_example.entities.User;
 
@@ -14,5 +14,5 @@ public interface UserService {
 
     User save(User user);
 
-    void delete(User user);
+    Optional<User> delete(User user);
 }

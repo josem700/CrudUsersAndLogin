@@ -2,16 +2,20 @@ package com.josem.loginexample.login_example.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="addresses")
+@Table(name="addresses", schema="test")
 public class Address {
 
     @Id
     private int id;
 
-    private int user_id;
+    //Relacion varias direcciones pertenecen a un usuario
+    @ManyToOne
+    private User user;
+
     private String countryCode;
     private String province;
     private String city;
@@ -26,14 +30,6 @@ public class Address {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
     }
 
     public String getCountryCode() {

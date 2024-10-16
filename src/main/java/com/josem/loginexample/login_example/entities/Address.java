@@ -12,7 +12,13 @@ public class Address {
     @Id
     private int id;
 
-    //Relacion varias direcciones pertenecen a un usuario
+/*  JoinColumn indica el nombre de la clave en caso de que se le de otro nombre
+    @JoinColumn(name="usuario_id")
+    Relacion de las tablas, varias direcciones pertenecen a un usuario
+    manyToOne por defecto crea un campo con la relacion y el nombre de la tabla
+    en este caso se llama users, entonces el nombre por defecto que genera
+    es user_id
+ */
     @ManyToOne
     private User user;
 
